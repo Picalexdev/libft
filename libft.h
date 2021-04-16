@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/16 16:51:10 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/04/16 18:35:06 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *haystack,
 					const char *needle, size_t len);
 char			*ft_strrchr(const char *s, int c);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 #endif

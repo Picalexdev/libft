@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 12:29:53 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/16 18:07:35 by apico-su         ###   ########.fr       */
+/*   Created: 2021/04/16 18:12:48 by apico-su          #+#    #+#             */
+/*   Updated: 2021/04/16 18:44:42 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	a;
+	size_t	x;
+	size_t	y;
+	char	*new;
 
-	a = 0;
-	if (size < 1)
-		return (ft_strlen(src));
-	while (a < size - 1 && src[a])
+	x = 0;
+	y = 0;
+	new = NULL;
+	while (s[x] != (char) start || s[x])
+		x++;
+	if (s[x] == (char) start)
 	{
-		dst[a] = src[a];
-		a++;
+		new = malloc(len + 1);
+		if (!new)
+			return (NULL);
+		while (y < len)
+		{
+			new[y] = s[x + y];
+			y++;
+		}
 	}
-	dst[a] = 0;
-	return (ft_strlen(src));
+	else
+		return (NULL);
+	new[y] = 0;
+	return (new);
 }
