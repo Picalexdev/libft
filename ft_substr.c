@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 18:12:48 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/16 18:44:42 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:34:22 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	x;
-	size_t	y;
-	char	*new;
+	unsigned int	i;
+	unsigned int	s_len;
+	char			*substr;
 
-	x = 0;
-	y = 0;
-	new = NULL;
-	while (s[x] != (char) start || s[x])
-		x++;
-	if (s[x] == (char) start)
-	{
-		new = malloc(len + 1);
-		if (!new)
-			return (NULL);
-		while (y < len)
-		{
-			new[y] = s[x + y];
-			y++;
-		}
-	}
-	else
+	if (!s)
 		return (NULL);
-	new[y] = 0;
-	return (new);
+	s_len = ft_strlen(s);
+	if (s_len < start)
+	{
+		if (!(substr = malloc(sizeof(char) * 1)))
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (!(substr = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
+	substr[i] = '\0';
+	return (substr);
 }
