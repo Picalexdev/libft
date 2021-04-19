@@ -9,6 +9,10 @@ ${NAME}:	${SRC}
 			${GCC} -c ${SRC}
 			ar rc $(NAME).a $(OBJS)
 
+test:		re
+			gcc $(CFLAGS) -I. main.c libft.a
+			rm -f *.o
+
 all:		${NAME}
 
 clean:

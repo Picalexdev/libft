@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/16 18:35:06 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/04/19 16:42:14 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
+char			*ft_strjoin(char const *s1, char const *s2);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 int				ft_strlen(const char *str);
