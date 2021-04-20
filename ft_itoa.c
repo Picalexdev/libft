@@ -3,63 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 19:29:38 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/19 21:28:59 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:44:37 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*num_calloc(int n, int base)
+static int	itoa_length(int n)
 {
-	int		x;
-	int		y;
-	char	*num;
+	int	len;
 
-	x = 1;
-	y = 0;
-	while (n / x != 0)
+	len = 0;
+	if (n < 0)
+		len++;
+	if (n == 0)
+		len = 1;
+	while (n)
 	{
-		x = x * base;
-		y++;
+		len++;
+		n /= 10;
 	}
-	if (n >= 0)
-		y--;
-	num = ft_calloc(y + 2, sizeof(char));
-	if (!num)
-		return (NULL);
-	num[0] = '0';
-	return (num);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int long	x[3];
-	char		*num;
+	char	*str;
+	int		len;
 
-	if (n == -2147483648)
-		return ("-2147483648\0");
-	num = num_calloc(n, 10);
-	if (!num)
+	len = itoa_length(n);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (str == NULL)
 		return (NULL);
-	x[0] = 1;
-	x[1] = 0;
-	x[2] = 0;
+	str[0] = '0';
 	if (n < 0)
 	{
-		num[0] = '-';
-		x[1]++;
+		str[0] = '-';
+		if (n == -2147483648)
+		{
+			str[len-- - 1] = '8';
+			n /= 10;
+		}
 		n = -n;
 	}
-	while (n / x[0])
-		x[0] = x[0] * 10;
-	while (x[0] / 10 > 0)
+	while (n && len >= 0)
 	{
-		num[x[1]++] = (n / (x[0] / 10)) - (x[2] * 10) + '0';
-		x[0] = x[0] / 10;
-		x[2] = (n / x[0]);
+		str[--len] = n % 10 + 48;
+		n /= 10;
 	}
-	return (num);
+	return (str);
 }

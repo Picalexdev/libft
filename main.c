@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 16:47:30 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/19 21:29:28 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:19:34 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	main()
 	memcpy(a, "Hola que tal", 40);
 	memcpy(b, "Hola bien y tu?", 40);
 	ft_strlcpy(b, a, 40); */
-	b = ft_itoa(-2147483647 -1);
+	//b = ft_itoa(-2147483647 -1);
 	printf("%s\n", b);
 }
