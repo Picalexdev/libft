@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2021/05/04 17:09:51 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/07/29 21:48:43 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <fcntl.h>
 # include <string.h>
 # include <ctype.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 char			*ft_itoa(int n);
 int				ft_atoi(const char *str);

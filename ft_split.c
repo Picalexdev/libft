@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 22:00:24 by apico-su          #+#    #+#             */
-/*   Updated: 2021/07/16 23:22:12 by apico-su         ###   ########.fr       */
+/*   Updated: 2021/07/29 21:59:16 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	numstring(char const *s1, char c)
 	{
 		if (*s1 == c)
 			cles = 0;
-		else if (cles == 0)
+		else if (!cles)
 		{
 			cles = 1;
 			comp++;
@@ -40,7 +40,7 @@ static int	numchar(char const *s2, char c, int i)
 	int	lenght;
 
 	lenght = 0;
-	while (s2[i] != c && s2[i] != '\0')
+	while (s2[i] != c && s2[i])
 	{
 		lenght++;
 		i++;
@@ -73,11 +73,11 @@ static char	**affect(char const *s, char **dst, char c, int l)
 		while (s[i] == c)
 			i++;
 		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
-		if (dst[j] == NULL)
+		if (!dst[j])
 			return (freee((char const **)dst, j));
-		while (s[i] != '\0' && s[i] != c)
+		while (s[i] && s[i] != c)
 			dst[j][k++] = s[i++];
-		dst[j][k] = '\0';
+		dst[j][k] = 0;
 		j++;
 	}
 	dst[j] = 0;
