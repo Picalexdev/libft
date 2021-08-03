@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2021/07/29 21:48:43 by alex             ###   ########.fr       */
+/*   Updated: 2021/08/03 10:50:11 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ int				ft_isalpha(int x);
 int				ft_isascii(int x);
 int				ft_isdigit(int x);
 int				ft_isprint(int x);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstadd_front(t_list **alst, t_list *new);
+t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstnew(void *content);
+int				ft_lstsize(t_list *lst);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *sx, const void *sy, size_t n);
