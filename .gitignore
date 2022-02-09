@@ -553,3 +553,4 @@ libft-war-machine-master/tests/Part2_functions/ft_substr/test05.output
 libft-war-machine-master/user_exe.dSYM/Contents/Info.plist
 libft-war-machine-master/user_exe.dSYM/Contents/Resources/DWARF/user_exe
 a.out
+main.c
