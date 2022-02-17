@@ -32,4 +32,5 @@ int	main()
 	//b = ft_itoa(-2147483647 -1);
 	b = ft_split("Hola muy bunas", ' ')[0];
 	printf("%s\n", b);
+	klasjhdfqa
 }
