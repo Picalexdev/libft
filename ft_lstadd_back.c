@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 13:19:40 by alex              #+#    #+#             */
-/*   Updated: 2021/08/03 10:45:30 by alex             ###   ########.fr       */
+/*   Updated: 2022/02/27 20:01:47 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*dst;
 
-	if (lst)
+	if (!*lst)
+		*lst = new;
+	else
 	{
-		if (!*lst)
-			*lst = new;
-		else
-		{
-			dst = ft_lstlast;
-		}
+		dst = ft_lstlast(*lst);
+		dst->next = new;
 	}
 }
