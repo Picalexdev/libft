@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2022/02/27 20:11:18 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/02/27 20:18:37 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int				ft_isdigit(int x);
 int				ft_isprint(int x);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstadd_front(t_list **alst, t_list *new);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
