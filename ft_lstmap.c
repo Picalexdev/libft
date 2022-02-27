@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 13:19:40 by alex              #+#    #+#             */
-/*   Updated: 2022/02/27 21:01:12 by apico-su         ###   ########.fr       */
+/*   Created: 2022/02/27 20:59:14 by apico-su          #+#    #+#             */
+/*   Updated: 2022/02/27 21:31:02 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*dst;
+	t_list	dest;
+	t_list	tmp;
 
-	if (!*lst)
-		*lst = new;
-	else
+	if (!lst || !f || !del)
+		return (0);
+	dest = ft_lstnew(lst->content);
+	if (!dest)
+		return (0);
+	tmp = dest;
+	lst = lst->next;
+	while (lst)
 	{
-		dst = ft_lstlast(*lst);
-		dst->next = new;
+		dest->next = ft_lstnew(f(lst->content));
+		if (!dest->next)
+		{
+			ft_lstclear(&tmp, del);
+			return (0);
+		}
+		dest = dest->next;
+		lst = lst->next;
 	}
+	dest->next = NULL;
+	return (tmp);
 }

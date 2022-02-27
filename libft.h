@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:04:37 by apico-su          #+#    #+#             */
-/*   Updated: 2022/02/27 20:18:37 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/02/27 21:05:34 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int				ft_isprint(int x);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 void			ft_lstadd_front(t_list **alst, t_list *new);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstnew(void *content);
@@ -53,7 +56,7 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
-char			*ft_strtrim(char const *s1, char const *set);
+char			*ft_strtrim(char const *s1, char const *set);	
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
