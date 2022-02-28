@@ -34,15 +34,15 @@ SRC		= ft_memset.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c
 
-BONUS =	ft_lstnew.c			\
-		ft_lstadd_front.c	\
-		ft_lstsize.c		\
-		ft_lstlast.c		\
-		ft_lstadd_back.c	\
-		ft_lstclear.c		\
-		ft_lstdelone.c		\
-		ft_lstiter.c		\
-		ft_lstmap.c
+BONUS =	ft_lstnew_bonus.c			\
+		ft_lstadd_front_bonus.c	\
+		ft_lstsize_bonus.c		\
+		ft_lstlast_bonus.c		\
+		ft_lstadd_back_bonus.c	\
+		ft_lstclear_bonus.c		\
+		ft_lstdelone_bonus.c		\
+		ft_lstiter_bonus.c		\
+		ft_lstmap_bonus.c
 
 OBJS	= ${SRC:.c=.o}
 BONUS_OBJS = ${BONUS:.c=.o}
@@ -52,7 +52,7 @@ CFLAGS	= -Wall -Wextra -Werror -g
 RM		= rm -f
 
 ${NAME}:	${SRC}
-			${GCC} -c ${SRC}
+			${GCC} -c ${HEADER} ${SRC}
 			ar rc $(NAME) $(OBJS)
 
 test:		re
@@ -69,7 +69,10 @@ fclean:		clean
 
 re:			fclean ${NAME}
 
-bonus: $(BONUS)
-	${GCC} -c ${BONUS}
-	ar rc $(NAME) $(BONUS)
-	${RM} ${BONUS_OBJS}
+bonus: 		$(BONUS)
+			${GCC} -c ${BONUS}
+			ar rc $(NAME) $(BONUS)
+			${RM} ${BONUS_OBJS}
+
+so:			cc -nostartfiles -fPIC $(CFLAGS) $(SRC)
+			gcc -nostartfiles -shared -o libft.so $(OBJ)
