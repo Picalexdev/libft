@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 20:59:14 by apico-su          #+#    #+#             */
-/*   Updated: 2022/02/28 19:29:32 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:57:39 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (0);
-	dest = ft_lstnew(lst->content);
+	dest = ft_lstnew(f(lst->content));
 	if (!dest)
 		return (0);
 	tmp = dest;

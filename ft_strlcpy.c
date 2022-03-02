@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:29:53 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/19 15:43:08 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:20:20 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	a;
 
 	a = 0;
-	if (!dst || !src)
+	if (!src)
 		return (0);
 	if (size < 1)
 		return (ft_strlen(src));
