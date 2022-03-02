@@ -73,6 +73,3 @@ bonus: 		$(BONUS)
 			${GCC} -c ${BONUS}
 			ar rc $(NAME) $(BONUS)
 			${RM} ${BONUS_OBJS}
-
-so:			cc -nostartfiles -fPIC $(CFLAGS) $(SRC)
-			gcc -nostartfiles -shared -o libft.so $(OBJ)
