@@ -6,7 +6,7 @@
 /*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:22:13 by apico-su          #+#    #+#             */
-/*   Updated: 2022/02/09 19:16:16 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/03/09 17:21:41 by apico-su         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	x = 0;
 	while (s[x])
 	{
-		f(x, &s[x]);
+		(f)(x, &s[x]);
 		x++;
 	}
 }
