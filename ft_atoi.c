@@ -6,7 +6,7 @@
 /*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 18:34:50 by apico-su          #+#    #+#             */
-/*   Updated: 2022/01/12 16:48:10 by alex             ###   ########.fr       */
+/*   Updated: 2022/03/12 17:41:29 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	if (!*str)
 		return (0);
-	if ((str[i] > 8 && str[i] < 14) || str[i] == 32)
-	{
-		while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
-			i++;
-	}
+	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
+		i++;
 	if (str[i] == '-')
 	{
 		negativo *= -1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apico-su <apico-su@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 16:55:12 by apico-su          #+#    #+#             */
-/*   Updated: 2021/04/15 20:16:03 by apico-su         ###   ########.fr       */
+/*   Updated: 2022/03/12 17:52:56 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 int	ft_isalnum(int x)
 {
-	int	z;
-
-	if (ft_isalpha(x) || ft_isdigit(x))
-		z = 1;
-	else
-		z = 0;
-	return (z);
+	return ((ft_isalpha(x) || ft_isdigit(x)));
 }
